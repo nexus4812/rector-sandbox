@@ -8,15 +8,20 @@ use Symplify\RuleDocGenerator\Exception\PoorDocumentationException;
 use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
 use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
-class AvoidUndefinedIndexRector extends AbstractRector
+final class AvoidUndefinedIndexRector extends AbstractRector
 {
     /**
      * @throws PoorDocumentationException
      */
     public function getRuleDefinition(): RuleDefinition
     {
+        $description = 'Use isset to avoid "Notice: Undefined index" ';
+        $description .= 'which is common in legacy applications. ';
+        $description .= 'Note: It is recommended to specify the target line ';
+        $description .= 'Note: For PHP8 and above, you can use the null-safe operator instead';
+
         return new RuleDefinition(
-            'Use isset to avoid "Notice: Undefined index" which is common in legacy applications. Note: It is recommended to specify the target line"', [
+            $description, [
                 new CodeSample(
                     // code before
                     '$_POST[\'non-existent-key\']',
