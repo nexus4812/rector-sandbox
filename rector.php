@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 use Rector\Config\RectorConfig;
+use RectorSandbox\Rector\AvoidUndefinedIndexRector;
 use RectorSandbox\Rector\MyFirstRector;
 
 return static function (RectorConfig $rectorConfig): void {
@@ -12,9 +12,10 @@ return static function (RectorConfig $rectorConfig): void {
     ]);
 
     // register a single rule
-    $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
+    $rectorConfig->rule(AvoidUndefinedIndexRector::class);
 
-    $rectorConfig->rule(MyFirstRector::class);
+    // official sample
+    // $rectorConfig->rule(MyFirstRector::class);
 
     // define sets of rules
     //    $rectorConfig->sets([
