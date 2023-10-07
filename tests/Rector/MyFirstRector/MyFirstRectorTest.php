@@ -8,6 +8,7 @@ use Iterator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Rector\Testing\PHPUnit\AbstractRectorTestCase;
 
+// @see https://getrector.com/documentation/writing-tests-for-custom-rule
 final class MyFirstRectorTest extends AbstractRectorTestCase
 {
     #[DataProvider('provideData')]
