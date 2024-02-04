@@ -15,7 +15,8 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.4"
+        "phpunit/phpunit": "^10.4",
+        "matthiasnoback/php-ast-inspector": "^0.4.0"
     },
     "scripts": {
         "unit": "vendor/bin/phpunit tests"
